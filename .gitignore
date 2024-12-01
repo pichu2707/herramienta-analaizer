@@ -4,3 +4,4 @@
 __pycache__/
 assets/external/
 *.entorno
+.*tools_generador/config.py

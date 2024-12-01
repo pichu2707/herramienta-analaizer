@@ -3,7 +3,7 @@ from requests.auth import HTTPBasicAuth
 import json
 import base64
 
-from config import TOKEN_OPENAI
+from tools_generador.config import TOKEN_OPENAI
 
 import openai
 from openai import OpenAI
