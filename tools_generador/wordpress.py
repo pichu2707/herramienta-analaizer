@@ -4,6 +4,7 @@ class DatosWP(rx.State):
     passwpord_wp: str
     dominio_wp: str
     user_wp: str
+    title_wp: str
 
         #Definiendo los modelos
     def set_dominio_wp(self,value):
@@ -14,6 +15,9 @@ class DatosWP(rx.State):
         
     def set_user_wp(self,value):
         self.user_wp=value
+        
+    def set_title_wp(self, value):
+        self.title_wp=value
         
     def procesar_datos(self):
         print(f"Dominio: {self.dominio_wp}")
@@ -57,3 +61,13 @@ def user_WP():
         ),
     )
         
+def title_WP():
+    return rx.vstack(
+        rx.input(
+            placeholder="Introduce aquí el título de tu contenido",
+            default_value=DatosWP.title_wp,
+            value=DatosWP.title_wp,
+            on_change=DatosWP.set_title_wp,
+            required=True,
+        ),
+    )
