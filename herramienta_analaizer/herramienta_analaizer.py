@@ -34,7 +34,3 @@ app = rx.App(
 app.add_page(index,
             title="Herramientas AnalAITools",
             description="Tenemos las herramientas que vayan siendo necesarias para los trabajos de Analítica")
-
-# app.add_page(generador,
-#              title="Herramienta de generación de contenido automático",
-#              description="Herramienta de generación de contenido automático conectado con GPT")

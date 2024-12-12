@@ -13,13 +13,4 @@ class SelectTipoContenido(rx.State):
             str: Nos devuelve el valor del tipo de contenido seleccionado
         """
         self.tipo_contenido=value
-
-def tipo_contenido():
-    return rx.center(
-        rx.select(
-            ["posts", "pages"],
-            value=SelectTipoContenido.tipo_contenido,
-            on_change=SelectTipoContenido.change_tipo_contenido,
-            required=True,
-        ),
-    )
+        print(f"el tipo de contenido es: {self.tipo_contenido}")

@@ -3,18 +3,12 @@ import reflex as rx
 class SliderTemperature(rx.State):
     temperature: float=0.5
     
-    def set_end(self, value: list[float]):
-        self.temperature=value[0]
+    def set_temperature(self, value: float):
+        """Actualiza el valor de la temperatura al confirmar el cambio
+
+        Args:
+            value (float): Valor de temperatura del GPT que va desde 0.0 hasta 1
+        """
+        self.temperature=value
+        print(f"el valor de temperatura es: {self.temperature}")
         
-    def procesando_datos(self):
-        print(f"Slieder temperature: {self.temperature}")        
-        
-def slider_intro():
-    return rx.vstack(
-        rx.heading("Selector de temperatura"),
-        rx.slider(on_value_commit=SliderTemperature.set_end,
-                custom_attrs={"step":0.1},
-                min=0,
-                max=1),
-        width="100%"
-    )

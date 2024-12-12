@@ -13,12 +13,4 @@ class SelectEstadoContenido(rx.State):
             str: Nos devuelve el valor del estado de contenido seleccionado
         """
         self.estado_contenido=value
-        
-def estado_contenido():
-    return rx.center(
-        rx.select(
-            ["draft", "publish", "pending", "private"],
-            value=SelectEstadoContenido.estado_contenido,
-            on_change=SelectEstadoContenido.change_estado_contenido,
-        ),
-    )
+        print(f"el estado de contenido es: {self.estado_contenido}")

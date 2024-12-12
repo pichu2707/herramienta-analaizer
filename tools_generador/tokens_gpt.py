@@ -3,16 +3,11 @@ import reflex as rx
 class SliderMaxTokens(rx.State):
     slider: int= 750
     
-    def set_end(self, value: list[int]):
-        self.slider=value[0]
-        
-    def procesado_datos(self):
-        print(f"Slider: {self.slider}")
-        
-def slider_max_token():
-    return rx.vstack(
-        rx.heading("Selector de tokens"),
-        rx.heading("Selector de tokens aproximados para usar"),
-        rx.slider(on_value_commit=SliderMaxTokens.set_end),
-        width="100%"
-    )
+    def set_tokens(self, value: int):
+        """Actualiza el valor del slider cuando el usuario confirma el cambio
+
+        Args:
+            value (int): Valor del número de tokens
+        """
+        self.slider=value
+        print(f"los tokens seleccionados son {self.slider}")

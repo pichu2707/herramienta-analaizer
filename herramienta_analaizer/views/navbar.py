@@ -3,7 +3,7 @@ import reflex as rx
 
 from herramienta_analaizer.styles.styles import Size, Color, dark_mode_toggle
 from herramienta_analaizer.components.link_icon import link_icon
-import herramienta_analaizer.constants as constants
+
 
 def navbar_icons_item(
         text: str, icon:str,url: str
