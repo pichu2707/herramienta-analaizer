@@ -3,6 +3,7 @@ import reflex as rx
 class SelectTipoContenido(rx.State):
     tipo_contenido: str="posts"
     
+    @rx.event
     def change_tipo_contenido(self, value: str):
         """Cambio la selección del valor de tipo de contenido
 

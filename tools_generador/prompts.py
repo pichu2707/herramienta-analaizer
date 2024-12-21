@@ -3,6 +3,7 @@ import reflex as rx
 class Contenidos(rx.State):
     prompt: str = ""
 
+    @rx.event
     def set_prompt(self, value: str) -> str:
         """Combina el nuevo texto ingresado por el usuario con el promp predefinido
         """
@@ -23,4 +24,3 @@ class Contenidos(rx.State):
         """
         
         self.prompt = str(value + promt_optimizacion)
-        print(f"Prompt actualizado: {self.prompt}")

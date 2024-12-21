@@ -3,6 +3,7 @@ import reflex as rx
 class SelectEstadoContenido(rx.State):
     estado_contenido: str ="draft"
     
+    @rx.event
     def change_estado_contenido(self, value: str):
         """Cambio la selección del valor de estado de contenido
 

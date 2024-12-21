@@ -3,6 +3,7 @@ import reflex as rx
 class SliderTemperature(rx.State):
     temperature: float=0.5
     
+    @rx.event
     def set_temperature(self, value: float):
         """Actualiza el valor de la temperatura al confirmar el cambio
 

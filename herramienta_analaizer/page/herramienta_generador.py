@@ -8,32 +8,39 @@ from tools_generador.wordpress import DatosWP
 from tools_generador.prompts import Contenidos
 from tools_generador.model_gpt import SelectModel
 from tools_generador.password_ai import Passwords
+from tools_generador.gpt_logic import content_button
+
 
 import herramienta_analaizer.styles.styles as styles
 from herramienta_analaizer.styles.styles import Size
 from herramienta_analaizer.views.navbar import navbar
-        
+
+
 @rx.page(route="/generador", title="Generador de contenido AnalAITools")
 def generador():
     return rx.vstack(
         navbar(),
+        
         rx.heading("Configuraciones de WP"),
         rx.input(
             placeholder="Introduce aquí el dominio de tu WordPress",
             on_blur=DatosWP.set_dominio_wp,  # Actualiza el estado
             required=True,
         ),
+        
         rx.input(
             placeholder="Escribe la contraseña de tu cuenta de WordPress",
             on_blur=DatosWP.set_password_wp,  # Actualiza el estado
             type="password",
             required=True,
         ),
+        
         rx.input(
             placeholder="Introduce aquí tu nombre de usuario",
             on_blur=DatosWP.set_user_wp,  # Actualiza el estado
             required=True,
         ),
+        
         rx.input(
             placeholder="Introduce aquí el título de tu contenido",
             on_blur=DatosWP.set_title_wp,  # Actualiza el estado
@@ -69,10 +76,12 @@ def generador():
         rx.input(
             rx.heading("API Key de GPT"),
             placeholder="Escribe aquí la API Key de GPT",
-            default_value=Passwords.password_gpt,
-            on_blur=Passwords.set_password_gpt,
+            value=Passwords.password_gpt,
+            on_change= Passwords.set_password_gpt,
             type="password",
-            required=True                
+            required=True,
+            size="3",
+            width="3"
         ),
         
         rx.select(
@@ -91,8 +100,12 @@ def generador():
             value=SelectTipoContenido.tipo_contenido,
             on_change=SelectTipoContenido.change_tipo_contenido,
             required=True,
+            
         ),
-    )
+        
+        # content_button(),
+        )
+        
     
 
 
