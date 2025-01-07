@@ -3,7 +3,7 @@ import reflex as rx
 class SliderMaxTokens(rx.State):
     slider: int= 750
     
-    @rx.event
+
     def set_tokens(self, value: int):
         """Actualiza el valor del slider cuando el usuario confirma el cambio
 

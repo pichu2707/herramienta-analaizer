@@ -1,7 +1,8 @@
 *.db
+*.entorno
 *.py[cod]
+.*tools_generador/config.py
 .web
 __pycache__/
 assets/external/
-*.entorno
-.*tools_generador/config.py
+.env
